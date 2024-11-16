@@ -4,7 +4,7 @@ namespace Name_game
     {
         static void Main(string[] args)
         {
-            var outNamess = new List<string>();
+            var usedNames = new List<string>();
             var str = "Ahmad,Ali,Azamat,Bahrom,Bekzod,Firuz," +
                     "Karim,Maksud,Matyoqub,Nuriddin,Sardor,Shavkat,Yuldosh" +
                     ",Zafar,Zokir,Dilbar,Nodira,Mohira," +
@@ -82,7 +82,7 @@ namespace Name_game
                     return;
                 }
                 lastChar = outNames[outNames.Length - 1];
-                if (outNamess.Contains(outNames) is true)
+                if (usedNames.Contains(outNames) is true)
                 {
                     Console.WriteLine("Siz aytilgan isimni kiritdinggiz\nGameOver        \tYouLose\n");
                    
@@ -90,7 +90,7 @@ namespace Name_game
                 }
                 else
                 {
-                    outNamess.Add(outNames);
+                    usedNames.Add(outNames);
                 }
 
                 for (int i = 0; i < namesList.Count; i++)
@@ -106,7 +106,7 @@ namespace Name_game
                         {
                             namesList.RemoveAll(namE=>namE==(outNames));
                         }
-                        outNamess.Add(name);
+                        usedNames.Add(name);
                         count = true;
                         break;
                     }
