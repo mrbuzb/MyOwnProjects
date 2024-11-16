@@ -1,0 +1,127 @@
+namespace Name_game
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var outNamess = new List<string>();
+            var str = "Ahmad,Ali,Azamat,Bahrom,Bekzod,Firuz," +
+                    "Karim,Maksud,Matyoqub,Nuriddin,Sardor,Shavkat,Yuldosh" +
+                    ",Zafar,Zokir,Dilbar,Nodira,Mohira," +
+                    "Sogdiana,Rubina,Shahida,Mehriniso," +
+                    "Amina,Asal,Asliddin,Bunyod,Diyor,Farhod,Farrux,G'ayrat,Jamol,Javanmard," +
+                    "Jaxongir,Kamoliddin,Komil,Lutfullaho,Madxiy,Mirza,Navruz,Nurali,Rauf,Rasul,Rovshan,Sadriddin,Samandar," +
+                    "Sanjar,Usman,Farid,Shaxboz,Shams,Shodmon,Yodgor,Shahzod,Abduvahob,Anvar," +
+                    "Bakhtiyor,Bibora,Mahbuba,Nasiba,Roya,Shahlo," +
+                    "Alisher,Bahodir,Barno,Bobur,Dilshod,Durdona,Farruh,G'ulom,Kamola" +
+                    ",Otabek,Parvina,Rustam,Sirojiddin,Soliha,Tohira,Umid,Usmon,Farida,Sherzod," +
+                    "Zulfiya,Zohida,Safiya,Firuza,Inoyat,Madina,Rayhon,Shahrinaz,Shohida," +
+                    "Shahista,Shahzoda,Munira,Nozima,Kamila,Samar,Dilorom" +
+                    ",Abdukarim,Azizbek,Baxtiyor,Doston,Dilrabo,Erkin,Gulchehra,Jamila,Javlon,Jasur,Kamol," +
+                    "Murod,Nargiza,Oydin,Olim,Parizod,Sabo,Tohir,Ulugbek,Vali,Xurshid," +
+                    "Yulduz,Zubayda,Zohra,Laylo,Saida,Shahrizod,Nilufar,Sahro,Gulbahor,Jamshid," +
+                    "Sanam,Yoshlik,Dildora,Nargul,Sabina,Shahnoza,Zaynab,Zulfizar,Yasmina,Oltin,Rano,Abdulaziz," +
+                    "Aziza,Akram,Asad,Barno,Bekzod,Bobur,Dilshod,Durdona,Davron,Elbek,Erkin,Farkhod,Farhod,Gulbahor," +
+                    "Gulsara,Jamshid,Jannat,Jahongir,Jasur,Kamron,Khamida,Karim,Lola,Madina,Mansur,Maruf,Mavluda," +
+                    "Mirza,Muhammad,Munira,Nigora,Nodira,Nodirbek,Ozoda,Oybek,Oysha,Rustam,Ravshan,Shahrizod," +
+                    "Sherzod,Shukhrat,Zaynab,Zafar,Zaynur,Zohida,Yulduz,Yusup,Yevdokiya,Akmal,Anvar,Azizbek," +
+                    "Davlatbek,Dilnoza,Doston,Farruh,Farrukh,Gulnora,Gulzoda,Hamid,Hilola,Hodija,Iskandar," +
+                    "Izzat,Kamila,Kamronbek,Karomat,Lola,Madinai,Mahmud,Malika,Muxammadali,Nargiza,Nasiba," +
+                    "Nilufar,Ozodbek,Parvina,Rayhon,Rustambek,Shohruh,Shohiza,Sherali,Shovot,Suhrob,Temur,Tohir," +
+                    "Ulug'bek,Ulfat,Umid,Usta,Usman,Xurshida,Xurshid,Yegor,Yulduzbek,Yamin,Zulfiya,Zulfiyaxon,Zukhra," +
+                    "Ziyodullo,Zokir,Abdurahmon,Bunyodbek,Bukhara,Bolat,Burhon,Vohid,Vali,Farhad,Firdavs,Farrukh," +
+                    "G'ayrat,G'ulom,Guzal,Durdona,Dilyara,Davronbek,Dostonbek,Zokhrabek,Ziyod,Zafarbek,Zaynabxon," +
+                    "Anvarbek,Abdukodir,Orif,Otabek,Shukhratbek,Shahrizodbek,Shoyim,Shafoat,Saida,Sadriddin,Sherali," +
+                    "Shamsiddin,Bakhrom,Bukhara,Bahrom,Bekzodbek,Bahor,Anis,Arif,Asilbek,Alisher,Ashraf,Boltabek," +
+                    "Boqiy,Burhonbek,Davronbek,Dostonbek,Dursun,Dilfuza,Dilyora,Dilbar,Islom,Ilyos,Ilhom,Ismail," +
+                    "Iskandarbek,Jahongirbek,Javlonbek,Jorabek,Kamol,Kamoliddin,Kamronbek,Komilbek,Kamil,Luiza," +
+                    "Muxammadqodir,Marufbek,Munira,Munira,Mavluda,Muzaffar,Mirzo,Mirzaferoz,Nabijon,Nargiza,Nizom," +
+                    "Nodirbek,Nasim,Nasiba,Nurbek,Otabek,Oybek,O'zodbek,Ozod,Odilbek,Saida,Shohruh,Shavkat,Samandar," +
+                    "Siroj,Shadiya,Sobir,Shodi,Shohida,Shohijon,Shohmurod,Shohnazar,Samandarbek,Sultonbek,Shamsiddin," +
+                    "Shavkatbek,Tashkent,Tursun,Temurbek,Tohirbek,Toshpulat,Timur,Tursunali,Usmon,Umidbek,Usmanbek," +
+                    "Uljayev,Farhodbek,Farizbek,Faruzbek,Shohinur,Sohib,Sodiq,Shamshod,Shoukh,Shohi,Zulfiya,Zafarbek," +
+                    "Zulol,Zukhra,Zamin,Zarifbek,Zubairbek,Zohidbek,Zihorbek,Zafarbek,Zaynur,Zaynabbek,Zakhir," +
+                    "Zulfiqar,Zayd,Zohidbek,Azamat,Abdurrahmon,Abrorbek,Arslonbek,Azim,Abduvahob,Abdukarim,Akmalbek," +
+                    "Bakhtiyor,Baxodir,Bakhtiyorbek,Baxshi,Bahodir,Badri,Bobur,Boshbek,Bakhtiyorbek,Boz,Badriddin," +
+                    "Bekzodbek,Boshbek,Buzruk,Boboyorbek,Dilshodbek,Dostonbek,Davronbek,Dilfuza,Dursunbek,Dilkor," +
+                    "Firdavsbek,Farrukhbek,Fayzbek,Firuzbek,Kamronbek,Kamolbek,Karimbek,Komilbek,Komronbek,Karomatbek," +
+                    "Ulugbek,Ulfatbek,Usmanbek,Usmonbek,Mavluda,Mahmudbek,Muxammadbek,Mahirbek,Malika,Muxammadali," +
+                    "Mukhammadvalik,Narmin,Nasiba,Nilufar,Oltinbek,Ozodbek,Parvina,Rustambek,Shohruhbek,Shavkatbek," +
+                    "Shohiza,Shamsiddin,Shoyim,Shohmurodbek,Shuhda,Shohratbek,Shodikor,Shohbozbek,Samar,Sultonbek," +
+                    "Shohidi,Sirojiddin,Sanjarbek,Sofiya,Samandarbek,Safarbek,Sumaya,Shavkatbek,Shahrizodbek," +
+                    "Shohruzbek,Shahnoza,Shohijonbek,Sherzodbek,Zohirbek,Zafarbek,Zulfiya,Zokhirbek,Zaynabbek," +
+                    "Zulkiflbek,Zuhra,Zukhrabek,Zukhra,Zafar,Zulfiyaxon,Zulmida";
+            string[] names = str.Split(",");
+            List<string> namesList = names.ToList();
+            var outNames = "";
+            char lastChar;
+            Console.WriteLine("\t\t\t\t\t __________________");
+            Console.WriteLine("\t\t\t\t\t|CreatedBy_Bekmurod|");
+            Console.WriteLine("\t\t\t\t\t ------------------");
+            Console.WriteLine("           ------------------------------------GameInformation-----------------------\n" +
+                "          |Siz ism Kiritasiz Men Siz Kiritgan Ismni Ohirgi Harfiga Ism Aytaman Agar  |\n" +
+                "          |Aytolmasam O'yin Tugaydi Va Men Yutqazaman.                               |" +
+                "\n          |Yoki Siz Men Aytgan Ismni Ohirgi Harfiga Ism Aytolmasanggiz Siz Yutqazasz |\n" +
+                "          |Bitta Ism Ikki Marta Kiritilsa O'yin Tugaydi                              |\n" +
+                "           __________________________________________________________________________" +
+                "\n\n\nO'yin boshlandi:\n\nBekmurod");
+            char charector = 'D';
+
+            var name = "";
+            var count = false;
+            var copyName = "";
+            while (true)
+            {
+
+                outNames = Console.ReadLine();
+                outNames = outNames.ToUpper();
+                if (string.IsNullOrEmpty(outNames) || outNames[0] != charector || outNames.Length < 1)
+                {
+                    Console.WriteLine("Noto'g'ri Ism Kiritdinggiz\n" +
+                        "GameOver        \tYouLose\n");
+                    return;
+                }
+                lastChar = outNames[outNames.Length - 1];
+                if (outNamess.Contains(outNames) is true)
+                {
+                    Console.WriteLine("Siz aytilgan isimni kiritdinggiz\nGameOver        \tYouLose\n");
+                   
+                    return;
+                }
+                else
+                {
+                    outNamess.Add(outNames);
+                }
+
+                for (int i = 0; i < namesList.Count; i++)
+                {
+                    if (namesList[i][0] == lastChar)
+                    {
+                        name = namesList[i];
+                        copyName = name;
+                        name = name.ToUpper();
+                        Console.WriteLine(namesList[i]);
+                        namesList.RemoveAll(word=>word==copyName);
+                        if (namesList.IndexOf(outNames) != -1)
+                        {
+                            namesList.RemoveAll(namE=>namE==(outNames));
+                        }
+                        outNamess.Add(name);
+                        count = true;
+                        break;
+                    }
+                }
+                if (count is false)
+                {
+                    break;
+                }
+                charector = char.ToUpper(name[name.Length - 1]);
+                count = false;
+            }
+
+            Console.WriteLine("\t\t\t\tYouWin\n");
+
+
+        }
+    }
+}
