@@ -29,7 +29,7 @@ namespace game
             Console.WriteLine("3.Expert");
             Console.Write("Select Level-->");
             var level=int.Parse(Console.ReadLine());
-            Console.ReadKey();
+            
             Console.Clear();
             if (level == 1)
             {
