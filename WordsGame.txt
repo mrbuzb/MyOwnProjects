@@ -82,6 +82,9 @@ namespace Word_Game
 
         static void Main(string[] args)
         {
+            Console.WriteLine("\t\t\t\t\t __________________");
+            Console.WriteLine("\t\t\t\t\t|CreatedBy_Bekmurod|");
+            Console.WriteLine("\t\t\t\t\t ------------------");
             AddDataBase();
             Console.Write("Enter Words Number:");
             var nums = int.Parse(Console.ReadLine());

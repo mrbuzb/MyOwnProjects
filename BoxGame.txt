@@ -1,0 +1,118 @@
+namespace game
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            FrontEnd();
+
+
+        }
+
+        public static void FrontEnd()
+        {
+            Console.WriteLine("\t\t\t\t\t __________________");
+            Console.WriteLine("\t\t\t\t\t|CreatedBy_Bekmurod|");
+            Console.WriteLine("\t\t\t\t\t ------------------");
+            Console.WriteLine("           ------------------------GameInformation--------------------\n" +
+                "          | Levelni Tanlaysiz Va Levelinggizga Qarab Qutilar Chiqadi  |\n" +
+                "          | Qutilarning Faqat Bittasini Ichi To'la Bo'ladi            |" +
+                "\n          | Siz O'sha To'la Qutini Topishinggiz Kerak                 |\n" +
+                "           ___________________________________________________________" +
+                "\n\n\n");
+
+
+
+
+            Console.WriteLine("1.Easy");
+            Console.WriteLine("2.Hard");
+            Console.WriteLine("3.Expert");
+            Console.Write("Select Level-->");
+            var level=int.Parse(Console.ReadLine());
+            Console.ReadKey();
+            Console.Clear();
+            if (level == 1)
+            {
+                while (true)
+                {
+                    var box = new int[3];
+                    Random random = new Random();
+                    box[random.Next(0, 3)] = 1;
+
+                    Console.WriteLine("  _______     _______     _______\r\n /       \\   /       \\   /       \\\r\n| " +
+                        "   1    | |    2    | |    3    |\r\n|         | |         | |         |\r\n \\_______/   \\_______/   \\_______/\r\n");
+                    Console.Write("Sellect :");
+                    var enteredNum = int.Parse(Console.ReadLine());
+
+                    if (box[enteredNum - 1] == 1)
+                    {
+                        Console.WriteLine("YouWin");
+                    }
+                    else
+                    {
+                        Console.WriteLine("YouLose");
+                    }
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+
+            }
+            if (level == 2)
+            {
+                while (true)
+                {
+                    var box = new int[5];
+                    Random random = new Random();
+                    box[random.Next(0, 5)] = 1;
+
+                    Console.WriteLine("  _______     _______     _______     _______     _______\r\n /       \\   /       \\   /       \\   /       \\   / " +
+                        "      \\\r\n|    1    | |    2    | |    3    | |    4    | |    5    |\r\n|         | |         | |         | |         | |        " +
+                        " |\r\n \\_______/   \\_______/   \\_______/   \\_______/   \\_______/\r\n");
+                    var enteredNum = int.Parse(Console.ReadLine());
+
+                    if (box[enteredNum - 1] == 1)
+                    {
+                        Console.WriteLine("YouWin");
+                    }
+                    else
+                    {
+                        Console.WriteLine("YouLose");
+                    }
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+
+            }
+            if (level == 3)
+            {
+                while (true)
+                {
+                    var box = new int[7];
+                    Random random = new Random();
+                    box[random.Next(0, 7)] = 1;
+
+                    Console.WriteLine("   _______     _______     _______     _______     _______     _______     _______\r\n  /       \\ " +
+                        "  /       \\   /       \\   /       \\   /       \\   /       \\   /       \\\r\n |    1    | |    2    | |    3 " +
+                        "   | |    4    | |    5    | |    6    | |    7    |\r\n |         | |         | |         | |         | |        " +
+                        " | |         | |         |\r\n  \\_______/   \\_______/   \\_______/   \\_______/   \\_______/   \\_______/   \\_______/\r\n");
+                    var enteredNum = int.Parse(Console.ReadLine());
+
+                    if (box[enteredNum - 1] == 1)
+                    {
+                        Console.WriteLine("YouWin");
+                    }
+                    else
+                    {
+                        Console.WriteLine("YouLose");
+                    }
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+
+            }
+
+        }
+
+
+    }
+}
