@@ -1,0 +1,154 @@
+namespace MathGame
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Front();
+        }
+
+        public static void Front()
+        {
+            var wrong = 0;
+            var right = 0;
+            var level = 10;
+            var levelCheck = 0;
+            while (true)
+            {
+                
+                Console.WriteLine($"True :{right}    --     False :{wrong}");
+                var num1 = RandNum(level);
+                var num2 = RandNum(level);
+                var num3 = RandNum(level);
+                var expressionOne = Expressions();
+                var expressionTwo = Expressions();
+                var sum = 0;
+                if (expressionOne == '+' && expressionTwo == '+')
+                {
+                    sum=num1+ num2+num3;
+                }
+                else if (expressionOne == '+' && expressionTwo == '-')
+                {
+                    sum=num1+ num2-num3;
+                }
+                else if (expressionOne == '+' && expressionTwo == '*')
+                {
+                    sum=num1+ num2*num3;
+                }
+                else if (expressionOne == '+' && expressionTwo == '/')
+                {
+                    sum=num1+ num2/num3;
+                }
+                else if (expressionOne == '-' && expressionTwo == '-')
+                {
+                    sum=num1- num2-num3;
+                }
+                else if (expressionOne == '-' && expressionTwo == '+')
+                {
+                    sum=num1- num2+num3;
+                }
+                else if (expressionOne == '-' && expressionTwo == '*')
+                {
+                    sum=num1- num2*num3;
+                }
+                else if (expressionOne == '-' && expressionTwo == '/')
+                {
+                    sum=num1- num2/num3;
+                }
+                else if (expressionOne == '*' && expressionTwo == '*')
+                {
+                    sum=num1* num2*num3;
+                }
+                else if (expressionOne == '*' && expressionTwo == '+')
+                {
+                    sum=num1* num2+num3;
+                }
+                else if (expressionOne == '*' && expressionTwo == '-')
+                {
+                    sum=num1* num2-num3;
+                }
+                else if (expressionOne == '*' && expressionTwo == '/')
+                {
+                    sum=num1* num2/num3;
+                }
+                else if (expressionOne == '/' && expressionTwo == '/')
+                {
+                    sum=num1/ num2/num3;
+                }
+                else if (expressionOne == '/' && expressionTwo == '+')
+                {
+                    sum=num1/ num2+num3;
+                }
+                else if (expressionOne == '/' && expressionTwo == '-')
+                {
+                    sum=num1/ num2-num3;
+                }
+                else if (expressionOne == '/' && expressionTwo == '*')
+                {
+                    sum=num1/ num2*num3;
+                }
+
+
+
+                Console.WriteLine($"{num1} {expressionOne} {num2} {expressionTwo} {num3}");
+                Console.Write("Answer :");
+                var answer=int.Parse(Console.ReadLine());
+                if(answer == sum)
+                {
+                    Console.WriteLine("True");
+                    right++;
+                    level += 10;
+                    levelCheck++;
+                }
+                else
+                {
+                    Console.WriteLine("False\n\n");
+                    wrong++;
+                    break;
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
+            if (levelCheck < 4)
+            {
+                Console.WriteLine("LEVEL : Loser");
+            }
+            else if(levelCheck <= 10)
+            {
+                Console.WriteLine("LEVEL : NORMAL");
+            }
+            else
+            {
+                Console.WriteLine("LEVEL : Calculator");
+            }
+
+        }
+
+
+        public static int RandNum(int level)
+        {
+            Random random = new Random();
+            var num = random.Next(1, level);
+            return num;
+        }
+
+
+
+        public static char Expressions()
+        {
+            var expresArr = new char[4];
+            expresArr[0] = '+';
+            expresArr[1] = '-';
+            expresArr[2] = '*';
+            expresArr[3] = '/';
+            Random random = new Random();
+
+            return expresArr[random.Next(0, 3)];
+        }
+
+
+
+
+
+    }
+}
