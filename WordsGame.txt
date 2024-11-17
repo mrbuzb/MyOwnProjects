@@ -1,0 +1,92 @@
+using System.Numerics;
+
+namespace Word_Game
+{
+    internal class Program
+    {
+        public static List<string> words = new List<string>();
+        public static void AddDataBase()
+        {
+            var strWords = "STOL,STUL,DIVAN,SHISHA,LAMPA,YOSTIQ,PARDA,POLKA,KRESLO,CHIROQ,SUMKA,AKVARIUM,PECHKA,RASM,GILAM," +
+"KITOB,CHOYNAK,FANAR,KIYIM,POYABZAL,PLITA,OSHXONA,TELEFON,XALTA,DASTUR,KAMBAL,OYNA,MEVA,BICHAK,QOPQOQ,SHAMPUN," +
+"KAFE,MUZLATGICH,ZARBA,SIFATLI,PO'LAT,SON,PESHONA,SUYUQLIK,MASHINA,BALTA,SARIQ,KUTUBXONA," +
+"GULDASTA,G'AZAL,SUV,DAZMOL,KICHKINA,BOSHQARMA,O'CHOQ,USTUN,RANG,DEVAN,MEBEL,KIRISH,BO'YOQ,MOVIY,AVTOMOBIL," +
+"SOVRIN,TAVAKKAL,RIVOJLANISH,MAYDA,SOCH,NAMOYISH,SHAFQATSIZ,AMALIY,G'OVAK,UY,SHLYAPA," +
+"XAT,TEXNIKA,PARHEZ,KARTON,QAVAT,DUSH,SIFAT,ESHIK,MAXSUS,MOSLAMA,LENTA,ARAVA,MEBEL," +
+"OMAD,TEXNIK,CHOY";
+            words.AddRange(strWords.Split(','));
+        }
+        public static string WordArrBuilder()
+        {
+            Random random = new Random(); // 21
+            var randInd = random.Next(0, words.Count); 
+            return words[randInd];
+        }
+
+        public static void MixedWord(int wordsNum)
+        {
+            var choiseNum = 3;
+            while (words.Count >= 0)
+            {
+                var word = WordArrBuilder();
+                word = word.ToUpper();
+                var mixedStr = string.Empty;
+                var usedIndex = new List<int>();
+                for (int i = 0; true; i++)
+                {
+                    Random rand = new Random();
+                    var randIndex = rand.Next(0, word.Length);
+                    if (usedIndex.IndexOf(randIndex) == -1)
+                    {
+                        mixedStr += word[randIndex];
+                        usedIndex.Add(randIndex);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    if (usedIndex.Count == word.Length)
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine(mixedStr);
+                Console.Write("--->");
+                var strByPeople = Console.ReadLine();
+                strByPeople = strByPeople.ToUpper();
+                if (strByPeople != word)
+                {
+                    Console.WriteLine("Wrong!\n");
+                    choiseNum--;
+                    wordsNum++;
+                    if (choiseNum == 0)
+                    {
+                        Console.WriteLine("YouLose");
+                        break;
+                    }
+                    
+                }
+                wordsNum--;
+                words.Remove(word);
+                if (wordsNum == 0)
+                {
+                    Console.WriteLine("YouWin");
+                    break;
+                }
+            }
+
+
+
+        }
+
+
+        static void Main(string[] args)
+        {
+            AddDataBase();
+            Console.Write("Enter Words Number:");
+            var nums = int.Parse(Console.ReadLine());
+            MixedWord(nums);
+
+        }
+    }
+}
