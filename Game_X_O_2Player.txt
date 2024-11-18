@@ -1,0 +1,206 @@
+namespace xoGAME
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var xOARr = new string[3, 3];
+            for (var i = 0; i < 3; i++)
+            {
+                for (var j = 0; j < 3; j++)
+                {
+                    xOARr[i, j] = ".";
+                }
+            }
+            var count = 0;
+            while (true)
+            {
+
+                Console.WriteLine("\t\t\t\t\t __________________");
+                Console.WriteLine("\t\t\t\t\t|CreatedBy_Bekmurod|");
+                Console.WriteLine("\t\t\t\t\t ------------------");
+
+
+                Console.WriteLine("Ustun =\n |" +
+                    "|" +
+                    "|\n");
+                Console.WriteLine("Qator = \n___\n" +
+                    "___\n" +
+                    "___\n");
+
+
+
+
+                Console.WriteLine($"  {xOARr[0, 0]} | {xOARr[0, 1]} | {xOARr[0, 2]}\r\n-------------\r\n  {xOARr[1, 0]} | {xOARr[1, 1]} | " +
+                    $"{xOARr[1, 2]}\r\n-------------\r\n  {xOARr[2, 0]} | {xOARr[2, 1]} | {xOARr[2, 2]}\r\n");
+                var qator = 0;
+                var ustun = 0;
+                Console.WriteLine("------------X------------");
+                Console.Write("Qator :");
+                qator = int.Parse(Console.ReadLine());
+                Console.Write("Ustun :");
+                ustun = int.Parse(Console.ReadLine());
+                if (xOARr[qator-1,ustun-1]!="X"&& xOARr[qator - 1, ustun - 1] != "O")
+                {
+                    xOARr[qator - 1, ustun - 1] = "X";
+                }
+                else
+                {
+                    Console.WriteLine("Bu Qator Band!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    continue;
+                }
+                for (var i = 0; i < 3; i++)
+                {
+                    for (var j = 0; j < 3; j++)
+                    {
+                        if (xOARr[i, j] == "X" || xOARr[i, j] == "O")
+                        {
+                            count++;
+                        }
+                    }
+                }
+                if (count == 25)
+                {
+                    Console.WriteLine("Draw");
+                    break;
+                }
+                Console.WriteLine($"  {xOARr[0, 0]} | {xOARr[0, 1]} | {xOARr[0, 2]}\r\n-------------\r\n  {xOARr[1, 0]} | {xOARr[1, 1]} | " +
+                    $"{xOARr[1, 2]}\r\n-------------\r\n  {xOARr[2, 0]} | {xOARr[2, 1]} | {xOARr[2, 2]}\r\n");
+                Console.ReadKey();
+                Console.Clear();
+
+                if (xOARr[0, 0] == "X" && xOARr[0, 1] == "X" && xOARr[0, 2] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[1, 0] == "X" && xOARr[1, 1] == "X" && xOARr[1, 2] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[2, 0] == "X" && xOARr[2, 1] == "X" && xOARr[2, 2] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[0, 0] == "X" && xOARr[1, 0] == "X" && xOARr[2, 0] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[0, 1] == "X" && xOARr[1, 1] == "X" && xOARr[2, 0] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[0, 2] == "X" && xOARr[1, 2] == "X" && xOARr[2, 2] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[0, 0] == "X" && xOARr[1, 1] == "X" && xOARr[2, 2] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+                else if (xOARr[0, 2] == "X" && xOARr[1, 1] == "X" && xOARr[2, 0] == "X")
+                {
+                    Console.WriteLine("X wins");
+                    break;
+                }
+
+
+                
+                Console.Clear();
+                Console.WriteLine("Ustun =\n |" +
+                    "|" +
+                    "|\n");
+                Console.WriteLine("Qator = \n___\n" +
+                    "___\n" +
+                    "___\n");
+
+                Console.WriteLine($"  {xOARr[0, 0]} | {xOARr[0, 1]} | {xOARr[0, 2]}\r\n-------------\r\n  {xOARr[1, 0]} | {xOARr[1, 1]} | " +
+                    $"{xOARr[1, 2]}\r\n-------------\r\n  {xOARr[2, 0]} | {xOARr[2, 1]} | {xOARr[2, 2]}\r\n");
+                Console.WriteLine("------------O------------");
+                Console.Write("Qator :");
+                qator = int.Parse(Console.ReadLine());
+                Console.Write("Ustun :");
+                ustun = int.Parse(Console.ReadLine());
+                if (xOARr[qator - 1, ustun - 1] != "X" && xOARr[qator - 1, ustun - 1] != "O")
+                {
+                    xOARr[qator - 1, ustun - 1] = "O";
+                }
+                else
+                {
+                    Console.WriteLine("Bu Qator Band!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    return;
+                }
+                Console.WriteLine($"  {xOARr[0, 0]} | {xOARr[0, 1]} | {xOARr[0, 2]}\r\n-------------\r\n  {xOARr[1, 0]} | {xOARr[1, 1]} | " +
+                    $"{xOARr[1, 2]}\r\n-------------\r\n  {xOARr[2, 0]} | {xOARr[2, 1]} | {xOARr[2, 2]}\r\n");
+                Console.ReadKey();
+                Console.Clear();
+
+                if (xOARr[0, 0] == "O" && xOARr[0, 1] == "O" && xOARr[0, 2] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[1, 0] == "O" && xOARr[1, 1] == "O" && xOARr[1, 2] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[2, 0] == "O" && xOARr[2, 1] == "O" && xOARr[2, 2] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[0, 0] == "O" && xOARr[1, 0] == "O" && xOARr[2, 0] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[0, 1] == "O" && xOARr[1, 1] == "O" && xOARr[2, 1] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[0, 2] == "O" && xOARr[1, 2] == "O" && xOARr[2, 2] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[0, 0] == "O" && xOARr[1, 1] == "O" && xOARr[2, 2] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+                else if (xOARr[0, 2] == "O" && xOARr[1, 1] == "O" && xOARr[2, 0] == "O")
+                {
+                    Console.WriteLine("O wins");
+                    break;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+        }
+    }
+}
